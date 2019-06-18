@@ -36,8 +36,12 @@ Page({
         app.globalData.hasLogin = true;
 
         wx.navigateBack({
-          delta: 1
+          delta: 1,
         })
+        console.log(res)
+      
+        wx.setStorageSync({key:'userLevel',data:res.data.userLevel})//获取会员等级信息
+ 
       }).catch((err) => {
         app.globalData.hasLogin = false;
         util.showErrorToast('微信登录失败');

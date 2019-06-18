@@ -9,6 +9,7 @@ Page({
       nickName: '点击登录',
       avatarUrl: 'http://yanxuan.nosdn.127.net/8945ae63d940cc42406c3f67019c5cb6.png'
     },
+    userLevel:'',//用户等级信息
     order: {
       unpaid: 0,
       unship: 0,
@@ -27,12 +28,16 @@ Page({
 
     //获取用户的登录信息
     if (app.globalData.hasLogin) {
-      let userInfo = wx.getStorageSync('userInfo');
+      let userInfo = wx.getStorageSync('userInfo'); //获取用户信息，微信封装
+      let userLevel=wx.getStorageSync('userLevel') //获取用户等级
+      
       this.setData({
         userInfo: userInfo,
-        hasLogin: true
+        hasLogin: true,
+        userLevel:userLevel
       });
-
+        console.log(userInfo)
+        console.log(userLevel)
       let that = this;
       util.request(api.UserIndex).then(function(res) {
         if (res.errno === 0) {
@@ -40,6 +45,7 @@ Page({
             order: res.data.order
           });
         }
+  
       });
     }
 
@@ -51,11 +57,22 @@ Page({
   onUnload: function() {
     // 页面关闭
   },
+  Sign(){
+      //用户签到
+    /*   util.request(api.AuthLogout, {}, 'POST'); */
+      util.request(api.signIn,{},'POST').then(function(res) {
+        console.log(res)
+        wx.showToast({title:res.data.message})
+  
+      });
+  
+
+  },
   goLogin() {
     if (!this.data.hasLogin) {
       wx.navigateTo({
         url: "/pages/auth/login/login"
-      });
+      })
     }
   },
   goOrder() {
@@ -154,6 +171,18 @@ Page({
     if (this.data.hasLogin) {
       wx.navigateTo({
         url: "/pages/ucenter/address/address"
+      });
+    } else {
+      wx.navigateTo({
+        url: "/pages/auth/login/login"
+      });
+    };
+  },
+  goSign(){
+    //会员中心
+    if (this.data.hasLogin) {
+      wx.navigateTo({
+        url: "/pages/ucenter/sign/sign"
       });
     } else {
       wx.navigateTo({

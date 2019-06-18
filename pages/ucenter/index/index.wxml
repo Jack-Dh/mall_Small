@@ -3,7 +3,12 @@
     <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
     <view class="info">
       <text class="name">{{userInfo.nickName}}</text>
+      <view class="userLevelBox">
+     <text>{{userLevel}}</text>
+     <button bindtap="Sign" size="mini">签到</button>
     </view>
+    </view>
+    
   </view>
 
   <view class='separate'></view>
@@ -70,6 +75,12 @@
       <image class='user_column_item_image' src='/static/images/address.png'></image>
       <view class='user_column_item_text'>地址管理</view>
     </view>
+
+<view class='user_column_item' bindtap='goSign'>
+      <image class='user_column_item_image' src='/static/images/address.png'></image>
+      <view class='user_column_item_text'>会员中心</view>
+    </view>
+
   </view>
   <view class='separate'></view>
 

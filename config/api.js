@@ -1,6 +1,7 @@
 // 以下是业务服务器API地址
 // 本机开发时使用
-var WxApiRoot = 'http://mall.jiajiachuang.cn/wx/';
+/* var WxApiRoot = 'http://mall.jiajiachuang.cn/wx/'; */
+var WxApiRoot = 'http://192.168.2.86:8082/wx/'
 // 局域网测试使用
 // var WxApiRoot = 'http://192.168.0.101:8080/wx/';
 // 云平台部署时使用
@@ -12,6 +13,8 @@ module.exports = {
   IndexUrl: WxApiRoot + 'home/index', //首页数据接口
   CatalogList: WxApiRoot + 'catalog/index', //分类目录全部分类数据接口
   CatalogCurrent: WxApiRoot + 'catalog/current', //分类目录当前分类数据接口
+  signIn: WxApiRoot + 'signin/click',//用户签到接口
+  signInList: WxApiRoot + 'signin/select',//用户签到信息
 
   AuthLoginByWeixin: WxApiRoot + 'auth/login_by_weixin', //微信登录
   AuthLoginByAccount: WxApiRoot + 'auth/login', //账号登录
