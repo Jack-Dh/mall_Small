@@ -40,8 +40,8 @@ Page({
         })
         console.log(res)
       
-        wx.setStorageSync({key:'userLevel',data:res.data.userLevel})//获取会员等级信息
- 
+        wx.setStorage({key:'userLevel',data:res.data.userLevel})//获取会员等级信息
+        wx.setStorage({key:'A',data:'res.data.userLevel'})//获取会员等级信息
       }).catch((err) => {
         app.globalData.hasLogin = false;
         util.showErrorToast('微信登录失败');

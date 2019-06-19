@@ -1,0 +1,40 @@
+<view class="order-goods">
+    <view class="goods">
+        <view class="item" wx:for="{{orderGoods}}" wx:key="id">
+            <view class="img">
+                <image src="{{item.picUrl}}"></image>
+            </view>
+            <view class="info">
+                <view class="t">
+                    <text class="name">{{item.goodsName}}</text>
+                </view>
+                <view class="attr">{{item.specifications}}</view>
+                <view class="price">￥{{item.price}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="order-goods">
+    <view class="h">
+        <view class="label">售后理由</view>
+    </view>
+    <view class="goods">
+        <view class="textareaBox">
+            <textarea placeholder="请输入需要售后的理由..." bindblur="blurchange"/>
+        </view>
+    </view>
+</view>
+<view class="order-goods">
+    <view class="h">
+        <view class="label">售后方式</view>
+    </view>
+    <view class="goods" style="padding:20rpx">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <input placeholder="请选择"  value="{{array[index]}}"/>
+        </picker>
+        
+    </view>
+</view>
+<view class="btnBox">
+<button class="btn" type="primary" bindtap="submitBtn">提交</button>
+</view>
