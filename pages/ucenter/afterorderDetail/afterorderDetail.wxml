@@ -1,0 +1,42 @@
+<view class="container">
+    <view class="order-info">
+        <view class="item-a">售后时间：{{orderGoods.addTime}}</view>
+        <view class="item-b">售后编号：{{orderGoods.aftersaleSn}}</view>
+        <view class="item-c">
+            <view class="l">
+                实付：
+                <text class="cost">￥{{orderGoods.price}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="order-goods">
+        <view class="h">
+            <view class="label">商品信息</view>
+        </view>
+        <view class="goods">
+            <view class="item">
+                <view class="img">
+                    <image src="{{orderGoods.picUrl}}"></image>
+                </view>
+                <view class="info">
+                    <view class="t">
+                        <text class="name">{{orderGoods.goodsName}}</text>
+                        <text class="number">x{{orderGoods.number}}</text>
+                    </view>
+                    <view class="attr">{{orderGoods.specifications}}</view>
+                    <view class="price">￥{{orderGoods.price}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="order-bottom" style="border-top:1px solid #f0f0f0;">
+            <view class="pay-fee">
+                <text class="label">售后方式：</text>
+                <text class="txt">{{orderGoods.aftersaleStatus}}</text>
+            </view>
+            <view class="pay-fee">
+                <text class="label">售后理由：</text>
+                <text class="txt">{{orderGoods.reason}}</text>
+            </view>
+        </view>
+    </view>
+</view>

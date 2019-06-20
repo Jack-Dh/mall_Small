@@ -41,7 +41,7 @@
             <navigator url="../../commentPost/commentPost?orderId={{item.orderId}}&&valueId={{item.goodsId}}&type=0">去评价</navigator>
           </view>
           <view class="btn active" wx:if="{{handleOption.rebuy}}">
-            <navigator url="../after-sales/after-sales?id={{orderId}}">申请售后</navigator>
+            <navigator url="../after-sales/after-sales?orderId={{item.orderId}}&&valueId={{item.goodsId}}">申请售后</navigator>
           </view>
         </view>
       </view>

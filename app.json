@@ -39,7 +39,9 @@
     "pages/coupon/coupon",
     "pages/help/help",
     "pages/ucenter/sign/sign",
-    "pages/ucenter/after-sales/after-sales"
+    "pages/ucenter/after-sales/after-sales",
+    "pages/ucenter/afterList/afterList",
+    "pages/ucenter/afterorderDetail/afterorderDetail"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FFFFFF",
