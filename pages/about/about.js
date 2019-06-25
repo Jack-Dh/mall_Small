@@ -12,11 +12,11 @@ Page({
   data: {
     load_statue: true,
     shopInfo: {
-      name: 'litemall',
-      address: 'https://github.com/linlinjava/litemall',
+      name: '悦为商城',
+      address: '上海市宝山区呼兰西路100号永谊大厦16楼',
       latitude: 31.201900,
       longitude: 121.587839,
-      linkPhone: '021-xxxx-xxxx',
+      linkPhone: '021-60820003',
       qqNumber: '738696120'
     },
   },

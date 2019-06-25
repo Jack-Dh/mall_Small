@@ -148,7 +148,7 @@ Page({
             })
             break;
         }
-   
+
       }
 
       wx.hideLoading();

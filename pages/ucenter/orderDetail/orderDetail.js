@@ -6,9 +6,10 @@ Page({
     orderId: 0,
     orderInfo: {},
     orderGoods: [],
-    expressInfo: {},
+  /*   expressInfo: {}, */
     flag: false,
-    handleOption: {}
+    handleOption: {},
+   afterbtnShow:true,//申请售后按钮显示隐藏
   },
   onLoad: function(options) {
     // 页面初始化 options为页面跳转所带来的参数
@@ -48,8 +49,21 @@ Page({
           orderInfo: res.data.orderInfo,
           orderGoods: res.data.orderGoods,
           handleOption: res.data.orderInfo.handleOption,
-          expressInfo: res.data.expressInfo
+       /*    expressInfo: res.data.expressInfo */
         });
+        /**
+         * 根据订单状态，判断申请售后按钮是否显示
+         * */ 
+          if(that.data.orderGoods[0].aftersale===false){
+            that.setData({
+              afterbtnShow:true
+            })
+          }else if(that.data.orderGoods[0].aftersale===true){
+            that.setData({
+              afterbtnShow:false
+            })
+          }
+
       }
 
       wx.hideLoading();

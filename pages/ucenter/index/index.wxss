@@ -122,6 +122,25 @@ page {
   margin-left: 40rpx;
 }
 
+.sign{
+  background-color:#AB956D;
+  padding:5rpx 30rpx;
+  border:solid 1px #dfdfdf;
+  border-radius:20px;
+}
+
+.sign .image{
+  width: 35rpx;
+  height: 35rpx;
+  margin-top: 8rpx;
+}
+
+.sign .text{
+  color: #ffffff;
+  font-size:35rpx;
+  margin-left: 15rpx;
+}
+
 .user_column_item_image {
   width: 50rpx;
   height: 50rpx;

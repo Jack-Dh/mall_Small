@@ -2,12 +2,22 @@
 <view class="profile-info" bindtap="goLogin">
     <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
     <view class="info">
-        <text class="name">{{userInfo.nickName}}<text style="font-size:30rpx">({{userLevel}})</text></text>
-        <view >
+        <text class="name">{{userInfo.nickName}}</text>
+        <view>
          <!--     userGrowValue:0,//成长值
     userIntegral:0,//积分 -->
-            <text>成长值:{{userGrowValue}}</text>
-            <text style="margin-left:20rpx">积分:{{userIntegral}}</text>
+            <text style='color:#ffffff;'>{{userLevel}}</text>
+            <text style="margin-left:20rpx;color:#ffffff">成长值:{{userGrowValue}}</text>
+            <text style="margin-left:20rpx;color:#ffffff">积分:{{userIntegral}}</text>
+        </view>
+        <!-- 坚持打卡天数 -->
+        <view>
+            <text style='color:#ffffff'>已连续签到</text>
+            <!-- <view class='daynumber'> -->
+                <text style='color:#ffffff'>{{count}}</text>
+                <text style='color:#ffffff'>天</text>
+            <!-- </view> -->
+            <!-- <text>请再接再厉，继续努力</text> -->
         </view>
     </view>
 </view>
@@ -16,6 +26,15 @@
     <text class='number'>{{count}}</text>
     <text >天</text></view> -->
 <!-- 打卡日历页面 -->
+<!-- 坚持打卡天数 -->
+    <!-- <view class='count'>
+        <text>截至目前，您已坚持签到</text> -->
+        <!-- <view class='daynumber'> -->
+            <!-- <text class='number'>{{count}}</text>
+            <text class='day'>天</text> -->
+        <!-- </view> -->
+        <!-- <text>请再接再厉，继续努力</text> -->
+    <!-- </view> -->
 <view class='all'>
     <view class="bar">
         <!-- 上一个月 -->
@@ -60,13 +79,5 @@
             </view>
         </view>
     </view>
-    <!-- 坚持打卡天数 -->
-    <view class='count'>
-        <text>截至目前，你已坚持签到</text>
-        <view class='daynumber'>
-            <text class='number'>{{count}}</text>
-            <text class='day'>天</text>
-        </view>
-        <text>请再接再厉，继续努力</text>
-    </view>
+    
 </view>

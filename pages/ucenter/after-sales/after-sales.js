@@ -20,7 +20,7 @@ Page({
       name: '维修'
     },
     {
-      id: 1,
+      id: 3,
       name: '仅退款'
     },
     {
@@ -31,9 +31,10 @@ Page({
     afterData: {
       reason: '',//售后理由
       type: '',
-      refundAmount: ''
+      refundAmount: '',
     },
-    goodsData: ''
+    goodsData: '',
+    orderSn: '',//订单编号
   },
   bindPickerChange: function (e) {
     let that = this
@@ -45,13 +46,20 @@ Page({
   },
   submitBtn() {
     //提交售后
-   
+
+
     let that = this
     //服务端返回数据
     let A = that.data.afterData
 
     //用户填写售后信息
     let B = that.data.goodsData
+
+    //赋值订单编号
+    A.orderSn = that.data.orderSn
+    that.setData({
+      afterData: A
+    })
 
     //合并对象
     let obj = { ...A, ...B }
@@ -60,21 +68,19 @@ Page({
       wx.showLoading({
         title: '加载中',
       })
-
       util.request(api.aftersale, obj, 'POST').then(res => {
         console.log(res)
-        if(res.errmsg==='成功'){
+        if (res.errmsg === '成功') {
           wx.showModal({
             title: '提示',
-            content:res.errmsg,
-            showCancel:false,
-            success(){
+            content: res.errmsg,
+            showCancel: false,
+            success() {
               wx.reLaunch({
                 url: '../index/index'
               })
             }
           })
-          
         }
       }).catch(err => {
         util.showErrorToast('服务器故障请稍后重试');
@@ -91,7 +97,7 @@ Page({
     setTimeout(function () {
       wx.hideLoading()
     }, 500)
-    
+
 
   },
   blurchange(e) {
@@ -108,7 +114,8 @@ Page({
     // 页面初始化 options为页面跳转所带来的参数
     this.setData({
       orderId: options.orderId,
-      goodsId: options.valueId
+      goodsId: options.valueId,
+      orderSn: options.orderSn
     });
     this.getOrderDetail();
   },

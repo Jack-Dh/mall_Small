@@ -40,8 +40,8 @@
           <view class="btn active" wx:if="{{handleOption.comment && (item.comment == 0)}}">
             <navigator url="../../commentPost/commentPost?orderId={{item.orderId}}&&valueId={{item.goodsId}}&type=0">去评价</navigator>
           </view>
-          <view class="btn active" wx:if="{{handleOption.rebuy}}">
-            <navigator url="../after-sales/after-sales?orderId={{item.orderId}}&&valueId={{item.goodsId}}">申请售后</navigator>
+          <view  class="btn active" wx:if="{{afterbtnShow}}">
+            <navigator url="../after-sales/after-sales?orderId={{item.orderId}}&&valueId={{item.goodsId}}&&orderSn={{orderInfo.orderSn}}">申请售后</navigator>
           </view>
         </view>
       </view>
@@ -80,8 +80,8 @@
   <view class="order-express" bindtap="expandDetail" wx:if="{{ handleOption.confirm }}">
     <view class="order-express">
       <view class="title">
-        <view class="t">快递公司：{{expressInfo.shipperName}}</view>
-        <view class="b">物流单号：{{expressInfo.logisticCode}}</view>
+        <view class="t">快递公司：{{orderInfo.expCode}}</view>
+        <view class="b">物流单号：{{orderInfo.expNo}}</view>
       </view>
       <image class="ti" src="/static/images/address_right.png" background-size="cover"></image>
     </view>
