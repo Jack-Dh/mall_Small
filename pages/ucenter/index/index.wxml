@@ -4,19 +4,16 @@
     <view class="info">
       <text class="name">{{userInfo.nickName}}</text>
       <view class="userLevelBox">
-     <text style='color:#fff'>{{userLevel}}</text>
-     <view bindtap="Sign" class='sign'>
-        <image class='image'src='/static/images/signin.png'></image>
-        <text class="text">签到</text>
+        <text style='color:#fff'>{{userLevel}}</text>
+        <view bindtap="Sign" class='sign'>
+          <image class='image' src='/static/images/signin.png'></image>
+          <text class="text">签到</text>
+        </view>
+        <!-- <button bindtap="Sign" size="mini" class='sign'>签到</button> -->
       </view>
-     <!-- <button bindtap="Sign" size="mini" class='sign'>签到</button> -->
     </view>
-    </view>
-    
   </view>
-
   <view class='separate'></view>
-
   <view class='user_area'>
     <view class='user_row' bindtap='goOrder'>
       <view class='user_row_left'>我的订单</view>
@@ -25,8 +22,7 @@
     <view class='user_column'>
       <view class='user_column_item' bindtap='goOrderIndex' data-index='1' data-route='/pages/ucenter/order/order'>
         <text class="user_column_item_badge" wx:if="{{order.unpaid != 0}}">{{order.unpaid}}</text>
-        <image class='user_column_item_image' src='/static/images/pendpay.png'>
-        </image>
+        <image class='user_column_item_image' src='/static/images/pendpay.png'></image>
         <view class='user_column_item_text'>待付款</view>
       </view>
       <view class='user_column_item' bindtap='goOrderIndex' data-index='2' data-route='/pages/ucenter/order/order'>
@@ -40,7 +36,9 @@
         <view class='user_column_item_text'>待收货</view>
       </view>
       <view class='user_column_item' bindtap='goOrderIndex' data-index='4' data-route='/pages/ucenter/order/order'>
-        <text class="user_column_item_badge" wx:if="{{order.uncomment != 0}}">{{order.uncomment}}</text>
+        <text class="user_column_item_badge" wx:if="{{order.uncomment != 0}}">
+          {{order.uncomment}}
+        </text>
         <image class='user_column_item_image' src='/static/images/comment.png'></image>
         <view class='user_column_item_text'>待评价</view>
       </view>
@@ -50,14 +48,11 @@
       </view>
     </view>
   </view>
-
   <view class='separate'></view>
-
   <view class='user_row'>
     <view class='user_row_left'>核心服务</view>
   </view>
   <view class='user_column'>
-
     <view class='user_column_item' bindtap='goCoupon'>
       <image class='user_column_item_image' src='/static/images/coupon.png'></image>
       <view class='user_column_item_text'>优惠卷</view>
@@ -74,25 +69,20 @@
       <image class='user_column_item_image' src='/static/images/group.png'></image>
       <view class='user_column_item_text'>我的拼团</view>
     </view>
-
     <view class='user_column_item' bindtap='goAddress'>
       <image class='user_column_item_image' src='/static/images/address.png'></image>
       <view class='user_column_item_text'>地址管理</view>
     </view>
-
-<view class='user_column_item' bindtap='goSign'>
+    <view class='user_column_item' bindtap='goSign'>
       <image class='user_column_item_image' src='/static/images/member.png'></image>
       <view class='user_column_item_text'>会员中心</view>
     </view>
-
   </view>
   <view class='separate'></view>
-
   <view class='user_row'>
     <view class='user_row_left'>必备工具</view>
   </view>
   <view class='user_column'>
-
     <button class="user_column_item_phone" open-type="getPhoneNumber" bindgetphonenumber="bindPhoneNumber">
       <image class='user_column_item_image' src='/static/images/mobile.png'></image>
       <view class='user_column_item_text'>绑定手机</view>
@@ -106,8 +96,7 @@
       <view class='user_column_item_text'>意见反馈</view>
     </view>
     <view class='user_column_item'>
-      <contact-button style="opacity:0;position:absolute;" type="default-dark" session-from="weapp" size="27">
-      </contact-button>
+      <contact-button style="opacity:0;position:absolute;" type="default-dark" session-from="weapp" size="27"></contact-button>
       <image class='user_column_item_image' src='/static/images/customer.png'></image>
       <view class='user_column_item_text'>联系客服</view>
     </view>
@@ -116,6 +105,5 @@
       <view class='user_column_item_text'>关于我们</view>
     </view>
   </view>
-
   <view class="logout" wx:if="{{hasLogin}}" bindtap="exitLogin">退出登录</view>
 </view>

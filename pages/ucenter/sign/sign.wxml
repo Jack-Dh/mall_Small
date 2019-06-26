@@ -7,12 +7,12 @@
          <!--     userGrowValue:0,//成长值
     userIntegral:0,//积分 -->
             <text style='color:#ffffff;'>{{userLevel}}</text>
-            <text style="margin-left:20rpx;color:#ffffff">成长值:{{userGrowValue}}</text>
-            <text style="margin-left:20rpx;color:#ffffff">积分:{{userIntegral}}</text>
+            <text style="margin-left:20rpx;color:#ffffff">成长值：{{userGrowValue}}</text>
+            <text style="margin-left:20rpx;color:#ffffff">积分：{{userIntegral}}</text>
         </view>
         <!-- 坚持打卡天数 -->
         <view>
-            <text style='color:#ffffff'>已连续签到</text>
+            <text style='color:#ffffff'>本月已签到</text>
             <!-- <view class='daynumber'> -->
                 <text style='color:#ffffff'>{{count}}</text>
                 <text style='color:#ffffff'>天</text>
