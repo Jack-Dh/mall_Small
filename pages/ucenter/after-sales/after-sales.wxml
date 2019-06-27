@@ -30,7 +30,8 @@
     </view>
     <view class="goods" style="padding:20rpx">
         <picker  bindchange="bindPickerChange" value="{{index}}" range="{{array}}" range-key="name">
-            <input placeholder="请选择"  value="{{array[index].name}}"/>
+           <!--  <input placeholder="请选择"  value="{{array[index].name}}"/> -->
+            <view  class="label">售后方式：{{array[index].name}}</view>
         </picker>
         
     </view>

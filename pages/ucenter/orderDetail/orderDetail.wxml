@@ -20,12 +20,15 @@
 
  <!-- 物流信息,仅收货状态下可见 -->
   <view class="order-express" bindtap="expandDetail" wx:if="{{ handleOption.confirm }}">
+          
     <view class="order-express">
+     <navigator url="../logistics/logistics?expNo={{orderInfo.expNo}}&&expCode={{orderInfo.expCode}}">
       <view class="title">
-        <view class="t">快递公司：{{orderInfo.expCode}}</view>
-        <view class="b">物流单号：{{orderInfo.expNo}}</view>
+        <view class="t">快递公司：{{orderInfoCopy.expCode}}</view>
+        <view class="b">物流单号：{{orderInfoCopy.expNo}}</view>
       </view>
       <image class="ti" src="/static/images/address_right.png" background-size="cover"></image>
+      </navigator>
     </view>
     <view class="traces" wx:for="{{expressInfo.Traces}}" wx:key="item" wx:for-item="iitem" wx:if="{{ flag }}">
       <view class="trace">
