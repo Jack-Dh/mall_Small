@@ -1,13 +1,9 @@
 // 以下是业务服务器API地址
-// 本机开发时使用
-/* var WxApiRoot = 'https://mall.jiajiachuang.cn/wx/'; */
-var WxApiRoot = 'http://192.168.1.199:8082/wx/'
-    // 局域网测试使用
-    // var WxApiRoot = 'http://192.168.0.101:8080/wx/';
-    // 云平台部署时使用
-    // var WxApiRoot = 'http://118.24.0.153:8080/wx/';
-    // 云平台上线时使用
-    // var WxApiRoot = 'https://www.menethil.com.cn/wx/';
+// 服务器部署使用
+var WxApiRoot = 'https://mall.jiajiachuang.cn/wx/';
+// 局域网测试使用
+// var WxApiRoot = 'http://192.168.3.200:8082/wx/';
+
 
 module.exports = {
     IndexUrl: WxApiRoot + 'home/index', //首页数据接口

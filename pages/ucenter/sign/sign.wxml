@@ -12,7 +12,7 @@
         </view>
         <!-- 坚持打卡天数 -->
         <view>
-            <text style='color:#ffffff'>本月已签到</text>
+            <text style='color:#ffffff'>本月已连续签到</text>
             <!-- <view class='daynumber'> -->
                 <text style='color:#ffffff'>{{count}}</text>
                 <text style='color:#ffffff'>天</text>
