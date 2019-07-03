@@ -159,6 +159,15 @@ page {
     font-size: 30rpx;
 }
 
+.goodName {
+    margin-top: 10rpx;
+    display: block;
+    line-height: 44rpx;
+    color: #333;
+    font-size: 30rpx;
+    margin-bottom: 5rpx
+}
+
 .order-goods .item .attr {
     height: 29rpx;
     line-height: 29rpx;

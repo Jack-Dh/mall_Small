@@ -4,7 +4,8 @@
     <view class="item-d">发货时间：{{orderInfo.addTime}}</view>
     <view class="item-b">订单编号：{{orderInfo.orderSn}}</view>
     <view class="item-c">
-      <view class="l">实付：
+      <view class="l">
+        实付：
         <text class="cost">￥{{orderInfo.actualPrice}}</text>
       </view>
       <view class="r">
@@ -16,18 +17,15 @@
       </view>
     </view>
   </view>
-
-
- <!-- 物流信息,仅收货状态下可见 -->
+  <!-- 物流信息,仅收货状态下可见 -->
   <view class="order-express" bindtap="expandDetail" wx:if="{{ handleOption.confirm }}">
-          
     <view class="order-express">
-     <navigator url="../logistics/logistics?expNo={{orderInfo.expNo}}&&expCode={{orderInfo.expCode}}">
-      <view class="title">
-        <view class="t">快递公司：{{orderInfoCopy.expCode}}</view>
-        <view class="b">物流单号：{{orderInfoCopy.expNo}}</view>
-      </view>
-      <image class="ti" src="/static/images/address_right.png" background-size="cover"></image>
+      <navigator url="../logistics/logistics?expNo={{orderInfo.expNo}}&&expCode={{orderInfo.expCode}}">
+        <view class="title">
+          <view class="t">快递公司：{{orderInfoCopy.expCode}}</view>
+          <view class="b">物流单号：{{orderInfoCopy.expNo}}</view>
+        </view>
+        <image class="ti" src="/static/images/address_right.png" background-size="cover"></image>
       </navigator>
     </view>
     <view class="traces" wx:for="{{expressInfo.Traces}}" wx:key="item" wx:for-item="iitem" wx:if="{{ flag }}">
@@ -38,68 +36,82 @@
     </view>
   </view>
 </view>
-
-
-
-
-  <view class="order-goods">
-    <view class="h">
-      <view class="label">商品信息</view>
-      <view class="status">{{orderInfo.orderStatusText}}</view>
-    </view>
-    <view class="goods">
-      <view class="item" wx:for="{{orderGoods}}" wx:key="id">
+<view class="order-goods">
+  <view class="h">
+    <view class="label">商品信息</view>
+    <view class="status">{{orderInfo.orderStatusText}}</view>
+  </view>
+  <view class="goods">
+    <view class="item" wx:for="{{orderGoods}}" wx:key="id">
       <navigator url="../../goods/goods?id={{item.goodsId}}">
         <view class="img">
           <image src="{{item.picUrl}}"></image>
         </view>
-        </navigator>
-        <view class="info">
+      </navigator>
+      <view class="info">
+        <view>
           <view class="t">
-           <navigator url="../../goods/goods?id={{item.goodsId}}">
-            <text class="name">{{item.goodsName}}</text>
-            <text class="number">x{{item.number}}</text>
+            <navigator url="../../goods/goods?id={{item.goodsId}}">
+              <text class="goodName">{{item.goodsName}}</text>
+              <text class="attr">{{item.specifications}}</text>
+             <!--  <text class="number">x{{item.number}}</text> -->
+            </navigator>
+            <view>
+              <view class="btn active" wx:if="{{handleOption.comment && (item.comment == 0)}}">
+                <navigator url="../../commentPost/commentPost?orderId={{item.orderId}}&&valueId={{item.goodsId}}&type=0">
+                  去评价
+                </navigator>
+              </view>
+              <view class="btn active" wx:if="{{afterbtnShow}}">
+                <navigator url="../after-sales/after-sales?orderId={{item.orderId}}&&valueId={{item.goodsId}}&&orderSn={{orderInfo.orderSn}}">
+                  申请售后
+                </navigator>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- <view class="attr">{{item.specifications}}</view> -->
+        <!-- <view class="price">￥{{item.price}}</view> -->
+        <!-- <view>
+          <view class="btn active" wx:if="{{handleOption.comment && (item.comment == 0)}}">
+            <navigator url="../../commentPost/commentPost?orderId={{item.orderId}}&&valueId={{item.goodsId}}&type=0">
+              去评价
             </navigator>
           </view>
-          <view class="attr">{{item.specifications}}</view>
-          <view class="price">￥{{item.price}}</view>
-          <view class="btn active" wx:if="{{handleOption.comment && (item.comment == 0)}}">
-            <navigator url="../../commentPost/commentPost?orderId={{item.orderId}}&&valueId={{item.goodsId}}&type=0">去评价</navigator>
+          <view class="btn active" wx:if="{{afterbtnShow}}">
+            <navigator url="../after-sales/after-sales?orderId={{item.orderId}}&&valueId={{item.goodsId}}&&orderSn={{orderInfo.orderSn}}">
+              申请售后
+            </navigator>
           </view>
-          <view  class="btn active" wx:if="{{afterbtnShow}}">
-            <navigator url="../after-sales/after-sales?orderId={{item.orderId}}&&valueId={{item.goodsId}}&&orderSn={{orderInfo.orderSn}}">申请售后</navigator>
-          </view>
-        </view>
-      </view>
-    </view>
-
-    <view class="order-bottom">
-      <view class="address">
-        <view class="t">
-          <text class="name">{{orderInfo.consignee}}</text>
-          <text class="mobile">{{orderInfo.mobile}}</text>
-        </view>
-        <view class="b">{{orderInfo.address}}</view>
-      </view>
-      <view class="total">
-        <view class="t">
-          <text class="label">商品合计：</text>
-          <text class="txt">￥{{orderInfo.goodsPrice}}</text>
-        </view>
-        <view class="t">
-          <text class="label">运费：</text>
-          <text class="txt">￥{{orderInfo.freightPrice}}</text>
-        </view>
-        <view class="t">
-          <text class="label">优惠：</text>
-          <text class="txt">￥-{{orderInfo.couponPrice}}</text>
-        </view>
-      </view>
-      <view class="pay-fee">
-        <text class="label">实付：</text>
-        <text class="txt">￥{{orderInfo.actualPrice}}</text>
+        </view> -->
       </view>
     </view>
   </view>
-
- 
+  <view class="order-bottom">
+    <view class="address">
+      <view class="t">
+        <text class="name">{{orderInfo.consignee}}</text>
+        <text class="mobile">{{orderInfo.mobile}}</text>
+      </view>
+      <view class="b">{{orderInfo.address}}</view>
+    </view>
+    <view class="total">
+      <view class="t">
+        <text class="label">商品合计：</text>
+        <text class="txt">￥{{orderInfo.goodsPrice}}</text>
+      </view>
+      <view class="t">
+        <text class="label">运费：</text>
+        <text class="txt">￥{{orderInfo.freightPrice}}</text>
+      </view>
+      <view class="t">
+        <text class="label">优惠：</text>
+        <text class="txt">￥-{{orderInfo.couponPrice}}</text>
+      </view>
+    </view>
+    <view class="pay-fee">
+      <text class="label">实付：</text>
+      <text class="txt">￥{{orderInfo.actualPrice}}</text>
+    </view>
+  </view>
+</view>

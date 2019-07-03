@@ -33,7 +33,7 @@
           <image src="{{gitem.picUrl}}"></image>
         </view>
         <view class="info">
-          <text class="name">{{gitem.goodsName}}</text>
+          <text style="text-overflow:ellipsis" class="goodName">{{gitem.goodsName}}</text>
           <text class="number">共{{gitem.number}}件商品</text>
         </view>
         <view class="status"></view>

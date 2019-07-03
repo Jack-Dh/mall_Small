@@ -3,8 +3,8 @@
   <view class="about-item">
 
     <view class="item-left">
-      <label>项目名称: </label>
-       <text>{{shopInfo.name}}</text> 
+      <label>项目所有: </label>
+       <text>悦为电商</text> 
     </view>
 
   </view>
@@ -12,33 +12,24 @@
   <view class="about-item">
     <view class="item-left">
       <label>公司地址: </label>
-       <text>{{shopInfo.address}}</text> 
+       <text>上海市宝山区呼兰西路100号永谊大厦16楼</text> 
     </view>
 
-    <view class="item-right" bindtap="showLocation">
+  <!--   <view class="item-right" bindtap="showLocation">
       <image src="/static/images/ico-addr.png" class="right-icon"></image>
-    </view>
+    </view> -->
   </view>
 
   <view class="about-item">
     <view class="item-left">
-      <label>电话号码:    </label>
-       <text>{{shopInfo.linkPhone}}</text> 
+      <label>联系电话:    </label>
+       <text>021-60820003</text> 
     </view>
     <view class="item-right" bindtap="callPhone">
       <image src="/static/images/telephone.png" class="right-icon"></image>
     </view>
   </view>
 
-  <!-- <view class="about-item">
-    <view class="item-left">
-      <label>QQ交流群: </label>
-       <text>{{shopInfo.qqNumber}}</text> 
-    </view>
-    <view class="item-right">
-      <image src="/static/images/mobile.png" class="right-icon"></image>
-    </view>
-  </view> -->
 
   <view class="about-item">
     <view class="item-left">
@@ -46,12 +37,6 @@
        <text>1.0.0</text> 
     </view>
   </view>
-<!-- 
-  <view class="about-item">
-    <view class="item-left">
-      <label>开源协议: </label>
-       <text>MIT</text> 
-    </view>
-  </view> -->
+
 
 </view>
