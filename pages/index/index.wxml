@@ -6,19 +6,19 @@
       <text class="txt">商品搜索, 共{{goodsCount}}款好物</text>
     </navigator>
   </view>
-  <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
-    <swiper-item wx:for="{{banner}}" wx:key="id">
+  <swiper  class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+    <swiper-item wx:for="{{banner}}" wx:key="id" >
       <!-- <navigator url="{{item.link}}"> -->
-      <image src="{{item.url}}" background-size="cover"></image>
+      <image bindtap="clickme" data-index="{{item}}"  src="{{item.url}}" background-size="cover"></image>
       <!-- </navigator> -->
     </swiper-item>
   </swiper>
-  <view class="m-menu">
+ <!--  <view class="m-menu">
     <navigator class="item" url="/pages/category/category?id={{item.id}}" wx:for="{{channel}}" wx:key="id">
       <image src="{{item.iconUrl}}" background-size="cover"></image>
       <text>{{item.name}}</text>
     </navigator>
-  </view>
+  </view> -->
 
   <view class="a-section a-coupon" wx:if="{{coupon.length > 0}}">
     <view class="h">
