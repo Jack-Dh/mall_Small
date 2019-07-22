@@ -40,9 +40,9 @@
       </view>
       <view class="b" style="display: flex;justify-content: space-between;">
         <view class="l">实付：￥{{item.actualPrice}}</view>
-         <view class="btn active" wx:if="{{item.orderStatusText=='已发货'?true:item.orderStatusText=='已收货'?true:false}}">
+     <!--     <view class="btn active" wx:if="{{item.orderStatusText=='已发货'?true:item.orderStatusText=='已收货'?true:false}}">
             <navigator url="../logistics/logistics">查看物流</navigator>
-          </view>
+          </view> -->
       </view>
     </navigator>
   </view>

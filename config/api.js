@@ -1,6 +1,6 @@
 // 以下是业务服务器API地址
 // 服务器部署使用
-var WxApiRoot = 'https://manapi.jiajiachuang.cn/wx/';
+var WxApiRoot = 'https://wxmall.jiajiachuang.cn/wx/';
 // 局域网测试使用
 // var WxApiRoot = 'http://192.168.3.200:8082/wx/';
 

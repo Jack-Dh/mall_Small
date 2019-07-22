@@ -21,8 +21,8 @@ Page({
 
     onShareAppMessage: function() {
         return {
-            title: 'litemall小程序商场',
-            desc: '开源微信小程序商城',
+            title: '洋货团商城',
+            desc: '洋货团商城',
             path: '/pages/index/index'
         }
     },
@@ -111,9 +111,21 @@ Page({
 
         this.getIndexData();
     },
-    clickme(val) {
-        console.log(val)
-        console.log(1)
+    clickimage(val) {
+        /**
+         * 跳转对应专题页
+         * 
+         */
+        let link = val.currentTarget.dataset.index.link
+
+        if (link) {
+            wx.navigateTo({
+                url: `../topicDetail/topicDetail?id=${link}`
+            })
+        }
+
+
+
     },
     onReady: function() {
         // 页面渲染完成

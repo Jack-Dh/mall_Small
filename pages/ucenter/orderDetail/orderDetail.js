@@ -54,18 +54,51 @@ Page({
                         /*    expressInfo: res.data.expressInfo */
                 });
 
-                /**
-                 * 根据订单状态，判断申请售后按钮是否显示
-                 * */
-                if (that.data.orderGoods[0].aftersale === false) {
-                    that.setData({
-                        afterbtnShow: true
-                    })
-                } else if (that.data.orderGoods[0].aftersale === true) {
+                console.log(that.data.orderInfoCopy.orderStatusText)
+                    /**
+                     * 根据订单状态，判断申请售后按钮是否显示
+                     * */
+                    /*  if (that.data.orderGoods[0].aftersale === false) {
+
+                         that.setData({
+                             afterbtnShow: true
+                         })
+                         console.log(1)
+                     } else if (that.data.orderGoods[0].aftersale === true) {
+                         that.setData({
+                             afterbtnShow: false
+                         })
+                         console.log(2)
+                     } */
+
+                if (that.data.orderInfoCopy.orderStatusText === '未付款' || that.data.orderInfoCopy.orderStatusText === '已取消' || that.data.orderInfoCopy.orderStatusText === '已取消(系统)' || that.data.orderInfoCopy.orderStatusText === '已退款') {
                     that.setData({
                         afterbtnShow: false
                     })
+
+                } else {
+                    if (that.data.orderGoods[0].aftersale === false) {
+
+                        that.setData({
+                            afterbtnShow: true
+                        })
+                        console.log(1)
+                    } else if (that.data.orderGoods[0].aftersale === true) {
+                        that.setData({
+                            afterbtnShow: false
+                        })
+                        console.log(2)
+                    }
                 }
+
+
+
+
+
+
+
+
+
                 console.log(that.data.orderInfo)
                 let state = that.data.orderInfoCopy.expCode
                 let data = that.data.orderInfoCopy
