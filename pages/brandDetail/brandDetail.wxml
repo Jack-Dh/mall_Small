@@ -26,3 +26,6 @@
     </view>
   </view>
 </view>
+<view style="text-align: center">
+<text>{{tips}}</text>
+</view>
